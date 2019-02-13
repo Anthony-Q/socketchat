@@ -1,5 +1,5 @@
 import React from "react";
-import "./Rooms.scss";
+ require('./Rooms.scss') 
 
 export default function Rooms(props) {
   return (

@@ -1,20 +1,17 @@
-const express = require("express");
+import express from 'express';
+import parser from 'body-parser';
+import path from 'path';
+import pool from '../db/index.js'
+import React from 'react'
+import router from './router'
 const app = express();
-const parser = require("body-parser");
-const path = require("path");
-const pool = require('../db/index.js')
-const React = require('react')
-const ReactDOM = require('react-dom/server');
 
-        
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/../build"));
+app.use('/',router)
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../build/index.html"));
-// });
+app.use(express.static(__dirname + "/../build"));
 
 const Server = require("http").Server(app);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PAGES from "./methods/endpoint.js";
+import ENDPOINTS from "./methods/endpoint.js";
 import history from "./methods/history.js";
 
 export default class App extends React.Component {
@@ -12,18 +12,24 @@ export default class App extends React.Component {
 
 
   componentDidMount() {
-    history.onChange( (pathname) => {
-      this.setState( (prevState) => {
-        let newPath = prevState.pathname;
-        return {pathname: newPath};
-      });
-    });
+    // history.onChange( (pathname) => {
+    //   this.setState( (prevState) => { 
+    //     let newPath = prevState.pathname;
+    //     return {pathname: newPath};
+    //   });
+    // });
+
+    console.log('hello from component did mount')
   }
     render() {
-      const HANDLER = PAGES[this.props.pathname];
-  return (
+      const HANDLER = ENDPOINTS[this.props.pathname];
+  return (<div>
     <HANDLER />
+
+  </div>
+
   )
+  
     }
 }
 

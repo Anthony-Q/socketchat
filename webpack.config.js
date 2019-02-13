@@ -1,5 +1,8 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+
+
 
 module.exports = {
   entry: ["@babel/polyfill", path.join(__dirname, "src", "index.js")],
@@ -25,12 +28,12 @@ module.exports = {
         use: ["babel-loader"]
       },
       {
-        test: /\.(css|scss)$/,
-        use: [
-          "style-loader", // creates style nodes from JS strings
-          "css-loader", // translates CSS into CommonJS
-          "sass-loader" // compiles Sass to CSS, using Node Sass by default
-        ]
+        test: /\.s?css$/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'isomorphic-style-loader',
+            use: ['css-loader', 'sass-loader'],
+            
+        })
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg|ttf)$/,
@@ -41,6 +44,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html")
-    })
+    }),
+    new ExtractTextPlugin("styles.css")
   ]
 };

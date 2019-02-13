@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import "../index.scss";
 import io from "socket.io-client";
 import newMessageView from "./methods/handleNewMessage.js";
 import Form from "./Form.jsx";
 import Rooms from "./rooms/Rooms.jsx";
 import CreateRoom from "./Header/CreateRoom.jsx";
 import DirectMessage from "./DirectMessage.jsx";
-import Portal from "./Portal.jsx";
 import handleSubmit from "./methods/handleSubmit.js";
 import makeRoom from "./methods/makeRoom.js";
 import roomClick from "./methods/roomClick.js";
@@ -16,6 +14,17 @@ import Header from "./Header/Header.jsx";
 import PAGES from "./methods/endpoint.js";
 import Link from "./Link.jsx";
 import Login from "./Login.jsx";
+require('../index.scss') ;
+let portal;
+try {
+  if(window !== undefined) {
+    portal = require('./Portal.jsx')
+  
+  }
+
+} catch(e) {
+  console.log(e)
+}
 
 export default class Home extends Component {
   constructor(props) {
@@ -25,7 +34,7 @@ export default class Home extends Component {
       text: "",
       chatLog: [],
       directMessageLog: [],
-      username: null,
+      username: 'daniel',
       rooms: [
         "Lobby",
         "Arena",
@@ -71,10 +80,10 @@ export default class Home extends Component {
 
 
   componentDidMount() {
-    let promptVal = prompt("what is your name");
-    this.setState(prevState => {
-      return { username: promptVal };
-    });
+    // let promptVal = prompt("what is your name");
+    // this.setState(prevState => {
+    //   return { username: promptVal };
+    // });
   }
 
   submitOnEnterPress = e => {
@@ -111,7 +120,7 @@ export default class Home extends Component {
   
 
   render() {
-    const HANDLER = PAGES[this.props.pathname];
+    // const HANDLER = PAGES[this.props.pathname];
 
     const roomPortal = this.state.roomView ? (
       <Portal portal="roomPortal">

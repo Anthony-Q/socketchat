@@ -1,9 +1,10 @@
 import Home from "../Home.jsx";
 import Login from "../Login.jsx";
 
-const PAGES = {
-    "/": Home,
-    "/login": Login
+const ENDPOINTS = { 
+    '/'     : Home,
+    '/login': Login  
 }
 
-export default PAGES;
+
+export default ENDPOINTS;   
