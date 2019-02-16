@@ -28,59 +28,6 @@
   align-items: center; }
   .roomList:hover {
     cursor: pointer; }
-.header-container {
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-  background: #0077b5;
-  top: 0;
-  height: 10vh;
-  z-index: 2; }
-  .header-container .header-title {
-    grid-column-start: 3;
-    display: flex;
-    align-self: center;
-    margin: auto;
-    font-size: 0.7em;
-    color: white; }
-  .header-container .buttonWrapper {
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-    .header-container .buttonWrapper .showRoom-btn {
-      grid-column-start: 4;
-      grid-column-end: 4;
-      font-size: 0.2em;
-      background: white;
-      border: none;
-      color: #0077b5;
-      margin-right: 20px; }
-      .header-container .buttonWrapper .showRoom-btn:hover {
-        animation: headerButtonOffset 0.2s forwards;
-        cursor: pointer; }
-      .header-container .buttonWrapper .showRoom-btn:focus {
-        outline: none; }
-    .header-container .buttonWrapper .createRoom-btn {
-      font-size: inherit;
-      grid-column-start: 5;
-      grid-column-end: 5;
-      font-size: 0.2em;
-      border: none;
-      background: white;
-      color: #0077b5;
-      margin-right: 20px; }
-      .header-container .buttonWrapper .createRoom-btn:hover {
-        animation: headerButtonOffset 0.2s forwards;
-        cursor: pointer; }
-      .header-container .buttonWrapper .createRoom-btn:focus {
-        outline: none; }
-
-@keyframes headerButtonOffset {
-  0% {
-    box-shadow: 0 0 0 0; }
-  100% {
-    box-shadow: 5px 5px 0 #e5e5e5; } }
 .message-log {
   display: flex;
   position: relative;
@@ -162,6 +109,70 @@
 .room-message {
   position: relative;
   font-size: 0.1em; }
+.header-container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+  background: #0077b5;
+  top: 0;
+  height: 10vh;
+  z-index: 2; }
+  .header-container .header-title {
+    grid-column-start: 3;
+    display: flex;
+    align-self: center;
+    margin: auto;
+    font-size: 0.7em;
+    color: white; }
+  .header-container .loginButton-btn {
+    font-size: 0.5em;
+    background: white;
+    text-decoration: none; }
+  .header-container .buttonWrapper {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .header-container .buttonWrapper .loginButton-btn {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      font-size: 0.5em;
+      background: white;
+      text-decoration: none;
+      border: none; }
+    .header-container .buttonWrapper .showRoom-btn {
+      grid-column-start: 4;
+      grid-column-end: 4;
+      font-size: 0.2em;
+      background: white;
+      border: none;
+      color: #0077b5;
+      margin-right: 20px; }
+      .header-container .buttonWrapper .showRoom-btn:hover {
+        animation: headerButtonOffset 0.2s forwards;
+        cursor: pointer; }
+      .header-container .buttonWrapper .showRoom-btn:focus {
+        outline: none; }
+    .header-container .buttonWrapper .createRoom-btn {
+      font-size: inherit;
+      grid-column-start: 5;
+      grid-column-end: 5;
+      font-size: 0.2em;
+      border: none;
+      background: white;
+      color: #0077b5;
+      margin-right: 20px; }
+      .header-container .buttonWrapper .createRoom-btn:hover {
+        animation: headerButtonOffset 0.2s forwards;
+        cursor: pointer; }
+      .header-container .buttonWrapper .createRoom-btn:focus {
+        outline: none; }
+
+@keyframes headerButtonOffset {
+  0% {
+    box-shadow: 0 0 0 0; }
+  100% {
+    box-shadow: 5px 5px 0 #e5e5e5; } }
 @font-face {
   font-family: DanielsFont;
   src: url(111661196d65a2675d088a540f3b37e3.ttf) format("TrueType"); }

@@ -1,7 +1,11 @@
-import React from 'react';
+import React from "react";
 
 export default function Login(props) {
-    return (
-        <div><p>Login</p> <br></br> <p>Password</p></div>
-    )
+  return (
+    <div className="loginContainer">
+      <div className="userName">Username</div> <input />
+      <div className="insertData2">Password</div> <input />
+      <button className="authenticateSubmit">Submit</button>
+    </div>
+  );
 }

@@ -17,11 +17,26 @@
     color: white;
   }
 
+  .loginButton-btn {
+    font-size: 0.5em;
+    background: white;
+    text-decoration: none;
+  }
+
   .buttonWrapper {
     margin-left: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    .loginButton-btn {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      font-size: 0.5em;
+      background: white;
+      text-decoration: none;
+      border: none;
+    }
+
     .showRoom-btn {
       grid-column-start: 4;
       grid-column-end: 4;
@@ -38,6 +53,7 @@
         outline: none;
       }
     }
+
     .createRoom-btn {
       font-size: inherit;
       grid-column-start: 5;

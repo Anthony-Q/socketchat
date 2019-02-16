@@ -3,27 +3,22 @@ import io from "socket.io-client";
 import newMessageView from "./methods/handleNewMessage.js";
 import Form from "./Form.jsx";
 import Rooms from "./rooms/Rooms.jsx";
-import CreateRoom from "./Header/CreateRoom.jsx";
-import DirectMessage from "./DirectMessage.jsx";
 import handleSubmit from "./methods/handleSubmit.js";
 import makeRoom from "./methods/makeRoom.js";
 import roomClick from "./methods/roomClick.js";
 import MessageEntryList from "./Messages/MessageEntryList.jsx";
 import ChatWindow from "./ChatWindow.jsx";
 import Header from "./Header/Header.jsx";
-import PAGES from "./methods/endpoint.js";
-import Link from "./Link.jsx";
-import Login from "./Login.jsx";
-require('../index.scss') ;
+
+require("../index.scss");
+
 let portal;
 try {
-  if(window !== undefined) {
-    portal = require('./Portal.jsx')
-  
+  if (window !== undefined) {
+    portal = require("./Portal.jsx");
   }
-
-} catch(e) {
-  console.log(e)
+} catch (e) {
+  console.log(e);
 }
 
 export default class Home extends Component {
@@ -34,7 +29,7 @@ export default class Home extends Component {
       text: "",
       chatLog: [],
       directMessageLog: [],
-      username: 'daniel',
+      username: "daniel",
       rooms: [
         "Lobby",
         "Arena",
@@ -44,7 +39,7 @@ export default class Home extends Component {
       ],
       room: "Lobby",
       directMessage: false,
-      socketNum: null,
+      socketNum: null
     };
 
     this.roomClick = roomClick.bind(this);
@@ -76,8 +71,6 @@ export default class Home extends Component {
       });
     });
   }
-
-
 
   componentDidMount() {
     // let promptVal = prompt("what is your name");
@@ -117,11 +110,7 @@ export default class Home extends Component {
     this.setState({ text: e.target.value });
   };
 
-  
-
   render() {
-    // const HANDLER = PAGES[this.props.pathname];
-
     const roomPortal = this.state.roomView ? (
       <Portal portal="roomPortal">
         <Rooms rooms={this.state.rooms} roomClick={this.roomClick} />

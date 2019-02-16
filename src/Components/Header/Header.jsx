@@ -6,7 +6,7 @@ import "./header.scss";
 export default function Header(props) {
   return (
     <div className="header-container">
-      <a href="/login" class="loginButton">
+      <a href="/login" className="loginButton-btn">
         Login
       </a>
       <p className="header-title">&lt;Socket Chat/&gt;</p>
