@@ -6,7 +6,9 @@ import "./header.scss";
 export default function Header(props) {
   return (
     <div className="header-container">
-    <button>Login</button>
+      <a href="/login" class="loginButton">
+        Login
+      </a>
       <p className="header-title">&lt;Socket Chat/&gt;</p>
       <div className="buttonWrapper">
         <CreateRoom makeRoom={props.makeRoom} />
